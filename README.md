@@ -8,7 +8,7 @@ Recently, attention mechanism has been widely used in the ReID system to facilit
 
 We validate our method in Market1501, DukeMTMC and MSMT17 datasets, and our method shows a superior performance on all the datasets. Please check the Result section for the detaied quantity and quality result.
 
-![image](https://github.com/Gutianpei/APNet/blob/main/images/github_main_graph.png)
+![image](https://github.com/CHENGY12/APNet/blob/main/images/github_main_graph.png)
 Figure 1: The architecture of Attention Pyramid Networks (APNet). Our APNet adopts the “split-attend-merge-stack” principle, which first splits the feature maps into multiple parts, obtains the attention map of each part, and the attention map for current pyramid level is constructed by merging each attention map. Then in deeper pyramid level, we split the features into more fine-grained parts and learn the fine-grained attention guiding by coarse attentions. Finally, attentions with different granularities are stacked as attention pyramid and applies to original input feature by element-wise product.
 
 
@@ -25,7 +25,7 @@ conda create -n apnet python=3.7 -y
 conda activate apnet
 pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 -f https://download.pytorch.org/whl/torch_stable.html
 conda install ignite -c pytorch
-git clone https://github.com/Gutianpei/APNet.git
+git clone https://github.com/CHENGY12/APNet.git
 pip install -r requirements.txt
 ```
 
@@ -76,5 +76,5 @@ sh test.sh
 | DukeMTMC-Re-ID | 90.4 | 81.5 |
 |     MSMT17     | 83.7 | 63.5 |
 
-![image](https://github.com/Gutianpei/APNet/blob/main/images/github_vis.png)
+![image](https://github.com/CHENGY12/APNet/blob/main/images/github_vis.png)
 Figure 2: Visualizations of the attention maps with different pyramid level. We adopt the Grad-CAM to visualize the learned attention maps of our attention pyramid. For each sample, from left to right, we show the input image, attention of first level pyramid, attention of second level pyramid. We can observe that attentions in different pyramid levels capture the salient clues of different scales.

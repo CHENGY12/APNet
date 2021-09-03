@@ -73,7 +73,7 @@ class SEBottleneck(nn.Module):
 
         out = self.conv3(out)
         out = self.bn3(out)
-        zout = self.se(out)
+        out = self.se(out)
 
         if self.downsample is not None:
             residual = self.downsample(x)

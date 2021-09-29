@@ -108,11 +108,13 @@ class BN2d(nn.Module):
 class Baseline(nn.Module):
     in_planes = 2048
 
-    def __init__(self, num_classes, last_stride, model_path,level):
+    def __init__(self, num_classes, last_stride, model_path,level,msmt):
         super(Baseline, self).__init__()
         print(f"Training with pyramid level {level}")
         self.level = level
+        self.is_msmt = msmt
         self.base = ResNet(last_stride= last_stride)
+        
 
         self.base.load_param(model_path)
         self.base_1 = nn.Sequential(*list(self.base.children())[0:3])
@@ -237,6 +239,9 @@ class Baseline(nn.Module):
 
             return cls_score, global_feat  # global feature for triplet loss
         else:
-            return feat
+            if self.is_msmt:
+                return self.classifier(feat)
+            else:
+                return feat
 
             # return self.classifier(feat)

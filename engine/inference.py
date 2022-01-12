@@ -35,7 +35,7 @@ def create_supervised_evaluator(model, metrics,
             data, pids, camids = batch
             data = data.cuda()
 
-            feat = model(data)
+#             feat = model(data)
 
             data_f = fliplr(data)
             feat = model(data)

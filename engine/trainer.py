@@ -82,7 +82,7 @@ def create_supervised_evaluator(model, metrics,
         with torch.no_grad():
             data, pids, camids = batch
             data = data.cuda()
-            feat = model(data)
+#             feat = model(data)
             # ######### fliplr ####
             data_f = fliplr(data)
             feat = model(data)

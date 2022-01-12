@@ -67,7 +67,6 @@ class Market1501(BaseImageDataset):
         for img_path in img_paths:
             pid, _ = map(int, pattern.search(img_path).groups())
             if pid == -1: continue  # junk images are just ignored
-            if pid == 0: continue
             pid_container.add(pid)
         pid2label = {pid: label for label, pid in enumerate(pid_container)}
 

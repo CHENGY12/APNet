@@ -48,5 +48,5 @@ TEST:
   RE_RANK: False
   WEIGHT: "path"
 
-OUTPUT_DIR: "/home/gutianpei/ivg/github_temp/att/Market/"
+OUTPUT_DIR: "/content/drive/MyDrive/ReId/multiScale/output"
 # /home/gtp_cgy/ivg/dataset/Occluded-DukeMTMC-Dataset/Occluded_Duke
